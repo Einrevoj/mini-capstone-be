@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import firebase from "firebase/compat/app";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Form, Modal } from "react-bootstrap";
-import { db, auth } from "../../../Firebase";
-import { useCollection } from "react-firebase-hooks/firestore";
+import { auth } from "../../../Firebase";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -13,14 +11,14 @@ import { bindActionCreators } from "redux";
 
 export default function Signup() {
   const [darkMode, setDarkMode] = useState("");
-  const [username, setUsername] = useState("");
+  const [setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   // Validation
-  const [invalidUsername, setInvalidUsername] = useState(false);
+
   const [invalidEmail, setInvalidEmail] = useState(false);
   const [invalidPassword, setInvalidPassword] = useState(false);
 

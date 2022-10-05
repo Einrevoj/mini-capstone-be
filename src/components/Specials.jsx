@@ -22,7 +22,7 @@ export default function Specials() {
     ));
   };
   return (
-    <section id="special" className="py-5">
+    <section id="special" className="pb-5">
       <div className="container">
         <div className="title text-center py-5">
           <h2 className="position-relative d-inline-block">

@@ -7,6 +7,7 @@ export default function AdminProducts() {
   const [ratings, setRatings] = useState("1");
   const [type, setType] = useState("regular");
   const [description, setDescription] = useState("");
+  const [filter, setFilter] = useState("best");
 
   // Validation
   const [invalidProductName, setInvalidProductName] = useState(false);
@@ -70,6 +71,18 @@ export default function AdminProducts() {
           >
             <option value="regular">Regular</option>
             <option value="special">Special</option>
+          </Form.Select>
+        </Form.Group>
+
+        {/* Filter */}
+        <Form.Group controlId="formFilter" className="w-50">
+          <Form.Select
+            aria-label="Default select example"
+            onChange={(e) => setFilter(e.target.value)}
+          >
+            <option value="best">Best</option>
+            <option value="feat">Featured</option>
+            <option value="new">New</option>
           </Form.Select>
         </Form.Group>
 

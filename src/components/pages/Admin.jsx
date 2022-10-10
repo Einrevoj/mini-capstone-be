@@ -1,4 +1,5 @@
 import React from "react";
+import AdminBlogs from "../AdminBlogs";
 import AdminProducts from "./AdminProducts";
 
 export default function Admin() {
@@ -8,6 +9,10 @@ export default function Admin() {
         <h3>Products</h3>
 
         <AdminProducts />
+        <br />
+        <br />
+        <h3>BLOGS</h3>
+        <AdminBlogs />
       </div>
     </div>
   );

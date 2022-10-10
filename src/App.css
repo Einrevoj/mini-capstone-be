@@ -51,20 +51,6 @@
   border-color: white !important;
 }
 
-/* <!-- ---- Collection ---- --> */
-.active-filter-btn{
-  background-color: var(--pink) !important;
-  color: white !important;
-  border-color: var(--pink) !important;
-}
-.collection-img span{
-  top: 20px;
-  right: 20px;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-}
-
 /* <!-- ---- Specials ---- --> */
 .special-img span{
   top: 20px;
@@ -113,8 +99,12 @@ footer .brand{
   padding-top: 120px;
 }
 
-/* Cart */
+/* <!-- ---- Contact Us ---- --> */
+#contactUs{
+  padding-top: 120px;
+}
 
+/* <!-- ---- Cart ---- --> */
 .cartQty {
   background-color: transparent;
 }
@@ -155,7 +145,6 @@ p {
   color: white;
   padding: 20px;
 }
-
 .Cart-total-heading {
   color: white;
 }
@@ -189,7 +178,7 @@ p {
   }
 }
 
-/* Admin */
+/* <!-- ---- Admin ---- --> */
 .admin {
   text-align: center;
   padding-top: 120px !important;
@@ -199,4 +188,3 @@ p {
   align-items: center;
   justify-content: center;
 }
-

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { blogs } from "../utilities/enum";
+import { blogs } from "../utilities/enums";
 
 export default function Blogs() {
   const renderBlogs = () => {

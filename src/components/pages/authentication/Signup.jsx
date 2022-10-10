@@ -2,30 +2,28 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { Form, Modal } from "react-bootstrap";
-import { auth } from "../../../Firebase";
+import { auth } from "../../../firebase";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useDispatch, useSelector } from "react-redux";
 import * as actionUser from "../../../redux/actions/actionUser";
 import { bindActionCreators } from "redux";
 
 export default function Signup() {
   const [darkMode, setDarkMode] = useState("");
-  const [setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showModal, setShowModal] = useState(false);
 
   // Validation
-
   const [invalidEmail, setInvalidEmail] = useState(false);
   const [invalidPassword, setInvalidPassword] = useState(false);
 
-  const [user] = useAuthState(auth);
-  const activeUser = useSelector((state) => state.activeUser);
   const navigate = useNavigate();
   const { registerUser } = bindActionCreators(actionUser, useDispatch());
+  const [user] = useAuthState(auth);
+  const activeUser = useSelector((state) => state.activeUser);
 
   useEffect(() => {
     if (user || activeUser.email) {
@@ -49,13 +47,8 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (checkIfValid()) {
-      // Call back API
-      registerUser({
-        email: email,
-        password: password,
-      })
+      registerUser({ email: email, password: password })
         .then((response) => {
           console.log(response, "response");
           setInvalidEmail(false);
@@ -70,7 +63,6 @@ export default function Signup() {
 
   const closeRegistration = () => {
     setShowModal(false);
-    setUsername("");
     setEmail("");
     setPassword("");
     setConfirmPassword("");

@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faChevronRight,
   faEnvelope,
   faMapMarked,
   faPhone,
-  faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
@@ -13,6 +12,7 @@ import {
   faTwitter,
   faPinterest,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -20,16 +20,18 @@ export default function Footer() {
       <div className="container">
         <div className="row text-white g-4">
           <div className="col-md-6 col-lg-3">
-            <Link className="text-decoration-none brand text-white" to="/">
+            <a
+              href="index.html"
+              className="brand text-decoration-none text-white"
+            >
               ULTRA
-            </Link>
-            <p className="text-white text-muted mt-3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              mollitia quisquam veniam odit cupiditate, ullam aut voluptas velit
-              dolor ipsam?
+            </a>
+            <p className="text-white mt-3 text-muted">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque
+              ipsa dolores laudantium harum repellat eligendi quos facilis qui
+              aliquam pariatur.
             </p>
           </div>
-
           <div className="col-md-6 col-lg-3">
             <h5 className="fw-light">Links</h5>
             <ul className="list-unstyled">
@@ -59,25 +61,16 @@ export default function Footer() {
               </li>
               <li className="my-3">
                 <Link
-                  to="/contact"
+                  to="/contact-us"
                   className="text-white text-decoration-none text-muted"
                 >
-                  <FontAwesomeIcon icon={faChevronRight} /> Contact
+                  <FontAwesomeIcon icon={faChevronRight} /> Contact Us
                 </Link>
               </li>
             </ul>
           </div>
-
           <div className="col-md-6 col-lg-3">
             <h5 className="fw-light mb-3">Contact Us</h5>
-            <div className="d-flex justify-content-start align-items-start my-2 text-muted">
-              <span className="me-3">
-                <FontAwesomeIcon icon={faMapMarked} />
-              </span>
-              <span className="fw-light">
-                Novaliches, Quezon City, Philippines
-              </span>
-            </div>
             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
                 <FontAwesomeIcon icon={faEnvelope} />
@@ -86,50 +79,35 @@ export default function Footer() {
             </div>
             <div className="d-flex justify-content-start align-items-start my-2 text-muted">
               <span className="me-3">
+                <FontAwesomeIcon icon={faMapMarked} />
+              </span>
+              <span className="fw-light">
+                Ultra Street, Angeles City, Pampanga Philippines
+              </span>
+            </div>
+            <div className="d-flex justify-content-start align-items-start my-2 text-muted">
+              <span className="me-3">
                 <FontAwesomeIcon icon={faPhone} />
               </span>
-              <span className="fw-light">+9786 6776 236</span>
+              <span className="fw-light">0987 6543 210</span>
             </div>
           </div>
-
           <div className="col-md-6 col-lg-3">
             <h5 className="fw-light mb-3">Follow Us</h5>
-            <div>
-              <ul className="list-unstyled d-flex">
-                <li>
-                  <Link
-                    to="/"
-                    className="text-white text-decoration-none text-muted fs-4 me-4"
-                  >
-                    <FontAwesomeIcon icon={faFacebook} />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/"
-                    className="text-white text-decoration-none text-muted fs-4 me-4"
-                  >
-                    <FontAwesomeIcon icon={faTwitter} />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/"
-                    className="text-white text-decoration-none text-muted fs-4 me-4"
-                  >
-                    <FontAwesomeIcon icon={faInstagram} />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/"
-                    className="text-white text-decoration-none text-muted fs-4 me-4"
-                  >
-                    <FontAwesomeIcon icon={faPinterest} />
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <ul className="list-unstyled d-flex">
+              <li className="text-decoration-none text-muted fs-4 me-4">
+                <FontAwesomeIcon icon={faFacebook} />
+              </li>
+              <li className="text-decoration-none text-muted fs-4 me-4">
+                <FontAwesomeIcon icon={faTwitter} />
+              </li>
+              <li className="text-decoration-none text-muted fs-4 me-4">
+                <FontAwesomeIcon icon={faInstagram} />
+              </li>
+              <li className="text-decoration-none text-muted fs-4 me-4">
+                <FontAwesomeIcon icon={faPinterest} />
+              </li>
+            </ul>
           </div>
         </div>
       </div>

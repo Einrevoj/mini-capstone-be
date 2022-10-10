@@ -4,7 +4,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { Col, Container, Form, ListGroup, Row } from "react-bootstrap";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { useSelector } from "react-redux";
-import { db } from "../../Firebase";
+import { db } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
 export default function Cart() {

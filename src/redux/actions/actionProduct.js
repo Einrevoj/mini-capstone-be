@@ -9,7 +9,7 @@ export const getAllProducts = () => {
                 type: 'SAVE_PRODUCT_LIST',
                 payload: response
             })
-            }) .catch((error) => {
+        }).catch((error) => {
             reject(error);
         })
     })
@@ -24,7 +24,7 @@ export const addProduct = (body) => {
                 type: 'SAVE_PRODUCT_LIST',
                 payload: response
             })
-            }) .catch((error) => {
+        }).catch((error) => {
             reject(error);
         })
     })
@@ -39,22 +39,7 @@ export const deleteProduct = (productId) => {
                 type: 'SAVE_PRODUCT_LIST',
                 payload: response
             })
-            }).catch((error) => {
-            reject(error);
-        })
-    })
-}
-
-export const addBlog = (body) => {
-    const url = '/blog/add';
-    return new Promise((resolve, reject) => {
-        const promise = put(url, body);
-        promise.then((response) => {
-            resolve({
-                type: 'SAVE_BLOG_LIST',
-                payload: response
-            })
-            }) .catch((error) => {
+        }).catch((error) => {
             reject(error);
         })
     })

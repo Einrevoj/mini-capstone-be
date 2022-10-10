@@ -14,18 +14,18 @@ export const collections = [
     price: "$ 59.99",
   },
   {
+    id: 3,
+    image: "images/c_polo-shirt.png",
+    name: "Polo Shirt",
+    filter: "NEW",
+    price: "$ 36.99",
+  },
+  {
     id: 4,
     image: "images/c_shirt-girl.png",
     name: "Girl Shirts",
     filter: "BEST",
     price: "$ 32.99",
-  },
-
-  {
-    id: 3,
-    image: "images/c_polo-shirt.png",
-    name: "Polo Shirt",
-    filter: "NEW",
   },
   {
     id: 5,
@@ -108,7 +108,6 @@ export const blogs = [
   },
 ];
 
-// About us
 export const topRated = [
   {
     id: 1,

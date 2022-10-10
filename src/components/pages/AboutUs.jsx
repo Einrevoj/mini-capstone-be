@@ -1,5 +1,5 @@
 import React from "react";
-import { topRated, bestSelling, onSale } from "../../utilities/enum";
+import { topRated, bestSelling, onSale } from "../../utilities/enums";
 import Footer from "../Footer";
 
 export default function AboutUs() {

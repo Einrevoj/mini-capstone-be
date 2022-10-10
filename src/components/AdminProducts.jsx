@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as actionProduct from "../../redux/actions/actionProduct";
+import * as actionProduct from "../redux/actions/actionProduct";
 import { useDropzone } from "react-dropzone";
 
 export default function AdminProducts() {

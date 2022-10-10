@@ -1,15 +1,15 @@
+import React, { useEffect, useState } from "react";
+import "./auth.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
-import { auth, facebookProvider, googleProvider } from "../../../Firebase";
+import { auth, facebookProvider, googleProvider } from "../../../firebase";
 import { bindActionCreators } from "redux";
 import { useDispatch, useSelector } from "react-redux";
 import * as actionUser from "../../../redux/actions/actionUser";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useEffect, useState } from "react";
-import "./Login.css";
 
 export default function Login() {
   const [darkMode, setDarkMode] = useState("");
@@ -19,12 +19,12 @@ export default function Login() {
   // Validation
   const [invalidUser, setInvalidUser] = useState(false);
 
-  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const { loginUser, loginUserViaProvider } = bindActionCreators(
     actionUser,
     useDispatch()
   );
-  const navigate = useNavigate();
+  const [user] = useAuthState(auth);
   const activeUser = useSelector((state) => state.activeUser);
 
   useEffect(() => {
@@ -36,6 +36,7 @@ export default function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     loginUser({ email: email, password: password }).catch((error) => {
       console.log(error);
       setInvalidUser(true);
@@ -61,8 +62,6 @@ export default function Login() {
       })
       .catch((error) => alert(error.message));
   };
-
-  console.log(user);
 
   return (
     <div className="auth">

@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Container, Navbar } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
-import { auth, db } from "../Firebase";
+import { auth, db } from "../firebase";
 import * as actionUser from "../redux/actions/actionUser";
 import { bindActionCreators } from "redux";
 import { useDispatch, useSelector } from "react-redux";
@@ -67,8 +67,8 @@ export default function NavigationBar() {
                 type="button"
               >
                 <FontAwesomeIcon icon={faShoppingCart} />
-                <span className="nav-btn-label"> CART </span>
-                {cartProducts ? cartProducts?.docs.length : 0}
+                <span className="nav-btn-label"> CART </span>(
+                {cartProducts ? cartProducts?.docs.length : 0})
               </NavLink>
               <NavLink
                 to="/login"

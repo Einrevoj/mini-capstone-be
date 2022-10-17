@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actionBlog from "../redux/actions/actionBlog";
 import { useDropzone } from "react-dropzone";
+import axios from "axios";
 
 export default function AdminBlogs() {
   const [blogName, setBlogName] = useState("");
@@ -75,6 +76,21 @@ export default function AdminBlogs() {
 
       const formData = new FormData();
       formData.append("file", file);
+
+      // Upload to s3
+      axios
+        .put(`http://localhost:8080/blog/${blog.blogId}/upload`, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then(() => {
+          console.log("file uploaded successfully");
+          window.location.reload();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }, []);
 
     // React Dropzone
@@ -84,15 +100,19 @@ export default function AdminBlogs() {
     return (
       <div className="card h-100 text-center p-4">
         <img
-          src={blog.imageLink ? blog.imageLink : "/images/empty-img.png"}
+          src={
+            blog.imageLink
+              ? `http://localhost:8080/blog/${blog.blogId}/download`
+              : "/images/empty-image.jpeg"
+          }
           alt={blog.blogName}
           {...getRootProps()}
         />
         <div className="card-body">
           <h5 className="card-title mb-0">
-            {blog?.blogAuthor.substring(0, 12)}...
+            {blog?.blogName.substring(0, 12)}...
           </h5>
-          <p className="card-text lead fw-bold">{blog.blogName}</p>
+          <p className="card-text lead fw-bold">{blog.blogAuthor}</p>
           <button onClick={() => deleteBlog(blog.blogId)}>DELETE</button>
         </div>
       </div>
